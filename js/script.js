@@ -6,22 +6,23 @@
 let km = parseInt(prompt(' quanti chilometri percorri?'));
 //verifica sia un numero
 if ( isNaN(km)){
-  km =  prompt('inserisci un numero!');
-  console.log(km);
-}
+  km =  parseInt(prompt('inserisci i km con  un numero!'));
+ }
+console.log('i chilometri sono', km);
 
 let age = parseInt(prompt('quanti anni hai?'));
 //verifica sia un numero
 if (isNaN(age)){
-    age = prompt('inserisci un numero!')
+    age = parseInt(prompt('inserisci la tua età con un numero!'));
 }
+console.log("l'età è",age)
 
-const ticketPrice = ((km * 0.21).toFixed(2));
-console.log( ticketPrice);
-const ticket20 = ((ticketPrice * 0.8).toFixed(2));
-console.log(ticket20);
-const ticket40 = ((ticketPrice * 0.6).toFixed(2));
-console.log(ticket40);
+const ticketPrice = (km * 0.21);
+console.log( 'prezzo intero',ticketPrice);
+const ticket20 = (ticketPrice * 0.8);
+console.log('prezzo scontato 20%',ticket20);
+const ticket40 = (ticketPrice * 0.6);
+console.log('prezzo scontato 40%',ticket40);
 
 
 
@@ -42,4 +43,4 @@ if (age < 18 ) {
 
 //output result
 // prezzo arrotondato max due decimali
-document .getElementById('travel-cost').innerHTML += (price);
+document .getElementById('travel-cost').innerHTML += (price.toFixed(2))+'€';
