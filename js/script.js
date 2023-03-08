@@ -3,8 +3,19 @@
 //chiedi età
 //prezzo del biglietto 0.21euro al km
 
-const km = parseInt(prompt(' quanti chilometri percorri?'));
-const age = parseInt(prompt('quanti anni hai?'));
+let km = parseInt(prompt(' quanti chilometri percorri?'));
+//verifica sia un numero
+if ( isNaN(km)){
+  km =  prompt('inserisci un numero!');
+  console.log(km);
+}
+
+let age = parseInt(prompt('quanti anni hai?'));
+//verifica sia un numero
+if (isNaN(age)){
+    age = prompt('inserisci un numero!')
+}
+
 const ticketPrice = ((km * 0.21).toFixed(2));
 console.log( ticketPrice);
 const ticket20 = ((ticketPrice * 0.8).toFixed(2));
@@ -25,6 +36,7 @@ if (age < 18 ) {
     price = ticket40;
     console.log(price);
 } else {
+    price = ticketPrice;
     console.log(ticketPrice);
 }
 
